@@ -67,6 +67,7 @@ const Image = styled.img`
 `;
 
 const About = () => {
+  console.log('my componenet is rendering')
   return (
     <Container> 
       <Title> Environment Matters</Title>

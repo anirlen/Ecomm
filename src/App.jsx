@@ -1,48 +1,25 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Sign from './pages/SignIn';
+import Buy from './pages/Buy';
+import Sell from './pages/Sell';
 
-// Lazy-loaded components
-const Home = lazy(() => import('./pages/Home'));
-const SignIn = lazy(() => import('./pages/SignIn'));
-const Buy = lazy(() => import('./pages/Buy'));
-const Sell = lazy(() => import('./pages/Sell'));
+
+
+
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="Home"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Home />
-            </Suspense>
-          }
-        />
-        <Route
-          path="SignIn"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <SignIn />
-            </Suspense>
-          }
-        />
-        <Route
-          path="Buy"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Buy />
-            </Suspense>
-          }
-        />
-        <Route
-          path="Sell"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Sell />
-            </Suspense>
-          }
-        />
+        <Route path="/Home" element={<Home/>} />
+        <Route path="/SignIn" element={<Sign/>} />
+        <Route path="/Buy" element={<Buy/>} />
+        <Route path="/Sell" element={<Sell/>} />
+
+
+
       </Routes>
     </BrowserRouter>
   );
